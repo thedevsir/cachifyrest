@@ -69,8 +69,3 @@ want to submit an issue before creating a large pull request.
 ## License
 
 MIT
-
-
-## Don't forget
-
-What you build with GoWithWith is more important than GoWithWith. 

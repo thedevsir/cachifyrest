@@ -1,0 +1,17 @@
+{
+  "name": "cachifyrest",
+  "version": "1.0.0",
+  "description": "Cache server for rest-full apis",
+  "main": "index.js",
+  "repository": "https://github.com/thedevsir/cachifyrest",
+  "author": "Amir Irani",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "axios-cache-adapter": "^2.1.1",
+    "chalk": "^2.4.1",
+    "cli-table": "^0.3.1",
+    "express": "^4.16.3",
+    "minimist": "^1.2.0"
+  }
+}

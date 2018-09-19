@@ -53,6 +53,12 @@ Cache server listening on port 3110 !
   docker0   172.17.0.1   
   tun0      10.10.194.164
 ─────────────────────────────────────
+- Resources 
+  MemoryUsage : rss       41.44 MB
+                heapTotal 15.33 MB
+                heapUsed  12.7 MB
+                external  0.02 MB
+─────────────────────────────────────
 ```
 
 ## Have a question?

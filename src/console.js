@@ -9,6 +9,10 @@ exports.print = ({
     cacheMaxAge,
 }) => {
 
+    const convertToMB = (mu) => {
+        return Math.round(mu / 1024 / 1024 * 100) / 100 + ' MB';
+    };
+
     return `  
 
   ██████╗ █████╗  ██████╗██╗  ██╗██╗███████╗██╗   ██╗██████╗ ███████╗███████╗████████╗
@@ -27,11 +31,10 @@ exports.print = ({
 ${util.ips().toString()}
  ─────────────────────────────────────
  - Resources 
-    CPU  : -
-    RAM  : rss       ${chalk.green(Math.round(process.memoryUsage().rss / 1024 / 1024 * 100) / 100 + ' MB')}
-           heapTotal ${chalk.green(Math.round(process.memoryUsage().heapTotal / 1024 / 1024 * 100) / 100 + ' MB')}
-           heapUsed  ${chalk.green(Math.round(process.memoryUsage().heapUsed / 1024 / 1024 * 100) / 100 + ' MB')}
-           external  ${chalk.green(Math.round(process.memoryUsage().external / 1024 / 1024 * 100) / 100 + ' MB')}
+   MemoryUsage : rss       ${chalk.green(convertToMB(process.memoryUsage().rss))}
+                 heapTotal ${chalk.green(convertToMB(process.memoryUsage().heapTotal))}
+                 heapUsed  ${chalk.green(convertToMB(process.memoryUsage().heapUsed))}
+                 external  ${chalk.green(convertToMB(process.memoryUsage().external))}
  ─────────────────────────────────────
   
   `;

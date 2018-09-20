@@ -63,3 +63,38 @@ exports.ips = () => {
 
     return tableServerAddresses;
 };
+
+exports.panel = (left, right) => {
+
+    let panel = new Table({
+        head: [" Cache Server Information", " Analyze"],
+        chars: {
+            'top': '═',
+            'top-mid': '╤',
+            'top-left': '╔',
+            'top-right': '╗',
+            'bottom': '═',
+            'bottom-mid': '╧',
+            'bottom-left': '╚',
+            'bottom-right': '╝',
+            'left': '║',
+            'left-mid': '╟',
+            'mid': '─',
+            'mid-mid': '┼',
+            'right': '║',
+            'right-mid': '╢',
+            'middle': '│'
+        },
+        style: {
+            'padding-left': 0,
+            'padding-right': 1,
+            head: ['white'],
+        }
+    });
+
+    panel.push({
+        [left]: right,
+    });
+
+    return panel;
+};

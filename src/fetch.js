@@ -47,6 +47,8 @@ module.exports = (timeout, cacheMaxAge) => {
                 analyze.store.length = length;
             });
 
+            analyze.store.db = cache.store;
+
             return response.data;
 
         } catch (error) {

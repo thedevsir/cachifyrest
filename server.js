@@ -1,15 +1,9 @@
-#!/usr/bin/env node
-
-const charm = require('charm')();
 const express = require('express');
 const argv = require('minimist')(process.argv.slice(2));
 const bodyParser = require('body-parser')
 const app = express();
 
 let analyze = require('./src/analyze');
-
-charm.pipe(process.stdout);
-charm.reset();
 
 // Config
 const port = argv.port || argv.p || 3110;
@@ -51,23 +45,4 @@ app.use('/:path*', async (req, res) => {
     res.send(fetchRes)
 });
 
-app.listen(port, () => setInterval(_ => {
-
-    charm.reset();
-    charm.write(require('./src/console').print({
-        port,
-        timeout,
-        cacheMaxAge,
-    }));
-
-}, 1000));
-
-// process.on('SIGTERM', _ => {
-//     console.log("Finished all requests");
-//     process.exit(1);
-// });
-
-process.on('SIGINT', _ => {
-    console.log(' Bye Bye ;) ');
-    process.exit(1);
-});
+app.listen(port);

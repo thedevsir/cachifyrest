@@ -1,11 +1,15 @@
 {
   "name": "cachifyrest",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Cache server for rest-full apis",
   "repository": "https://github.com/thedevsir/cachifyrest",
   "author": "Amir Irani <freshmanlimited@gmail.com> (http://github.com/iraniamir)",
   "bin": {
     "cachifyrest": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "node server.js"
   },
   "license": "MIT",
   "dependencies": {
